@@ -2,6 +2,7 @@ import 'tailwindcss/tailwind.css'
 
 import { AppProps } from 'next/app'
 import { lazy } from 'react'
+import MainMenu from '../components/MainMenu'
 
 export interface SharedPageProps {
   draftMode: boolean
@@ -17,6 +18,7 @@ export default function App({
   const { draftMode, token } = pageProps
   return (
     <>
+      <MainMenu></MainMenu>
       {draftMode ? (
         <PreviewProvider token={token}>
           <Component {...pageProps} />
